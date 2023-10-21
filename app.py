@@ -151,10 +151,8 @@ def predict_crash():
             'month_cos': [np.cos(2 * np.pi * date.month / 12.0)],
         })
         prediction = crash_model.predict(prediction_input)
-    threshholds = [0, 1, 2, 3, 4, 5]
     return jsonify({
-        "prediction": np.digitize(prediction, threshholds).tolist()[0],
-        "regression": prediction.tolist()[0]},
+        "prediction": prediction.tolist()[0]},
         200)
 
 

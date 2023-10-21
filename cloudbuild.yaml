@@ -1,0 +1,16 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'hackharvard-backend:latest' 
+      - '.'
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'us-east4-docker.pkg.dev/hackharvard-402718/backend'
+
+images:
+  - 'hackharvard-backend:latest' 
+
